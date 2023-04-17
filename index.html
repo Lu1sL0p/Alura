@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <section class="textos">
+       <!-- <label for="entrada" class="etiquetas">
+          Ingrese texto a encriptar/desencriptar</label>-->
+        <textarea
+          id="entrada"
+          class="areas"
+          cols="80"
+          rows="25"
+          placeholder="Ingrese algo..."
+          required
+        ></textarea>
+        <textarea
+          id="salida"
+          class="areas"
+          cols="40"
+          rows="25"
+          placeholder="Su mensaje..."
+        ></textarea>
+      </section>
+      <section>
+        <input type="submit" value="Encriptar" class="boton" />
+        <input type="submit" value="Desencriptar" class="boton" />
+        <input type="submit" value="Limpiar" class="boton" />
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+  <script src="./index.js"></script>
+</html>
