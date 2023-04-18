@@ -7,11 +7,6 @@
   vertical-align: center;
 }
 
-header {
-  background-color: antiquewhite;
-  height: 5em;
-}
-
 .logoAlura {
   position: absolute;
   left: 2%;
@@ -19,14 +14,15 @@ header {
 }
 
 main {
-  gap: 2em;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+
 }
 
 .interactuar {
-  background-color: red;
+  margin: 3.5em 2em;
+  gap: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -34,10 +30,9 @@ main {
 
 .areas {
   padding: 1em;
-  border: 2px solid black;
   resize: none;
-  background-color: rgb(255, 249, 240);
-  font-size: ;
+  border: 2px solid black;
+  border-radius: 1em;
 }
 
 .botones {
@@ -46,24 +41,29 @@ main {
   justify-content: space-around;
 }
 
-
 .boton {
-    margin: 5px;
-  display: flex;
+  margin: 5px;
   width: 12em;
   height: 2.5em;
-  font-size: 16px;
+  display: flex;
   align-content: center;
   justify-content: center;
-  border-radius: 18px;
-  font-size: 21px;
+  font-size: 16px;
   font-weight: bold;
+  border-radius: 29px;
+  font-size: 21px;
 }
 
-.muñeco{
-position: absolute;
-width: 336px;
-height: 304px;
-left: 74%;
-top: 40%;
+.muñeco {
+  position: absolute;
+  width: 336px;
+  height: 304px;
+  left: 71%;
+  top: 23%;
+}
+
+.mensaje{
+  position: absolute;
+  left: 70.5%;
+  top: 67%;
 }
