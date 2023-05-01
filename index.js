@@ -4,17 +4,19 @@ let encriptador = document.querySelector("#encriptar");
 let desencriptador = document.querySelector("#desencriptar");
 let limpiar = document.querySelector("#limpiar");
 let copiar = document.querySelector("#copiar");
-let pegar = document.querySelector('#pegar')
-let muñeco = document.getElementById("muñeco");
+let pegar = document.querySelector("#pegar");
+let muñeco = document.getElementById("cuerpo");
 let fondo = document.getElementById("fondo");
 let diamante = document.getElementById("diamante");
 let msj = document.getElementById("mensaje");
+let alerta = document.getElementById("validacion");
 let op;
 
 function check() {
   let frase = entrada.value;
   let arreglo = frase.split("");
   let i = 0;
+
   switch (op) {
     case 0:
       while (i < arreglo.length) {
@@ -69,14 +71,25 @@ function check() {
 }
 
 function cifrar() {
-  op = 0;
-  check();
-  muñeco.style.display = "none";
-  fondo.style.display = "none";
-  diamante.style.display = "none";
-  msj.style.display = "none";
+  //Válida mayúsculas y  con acentos
+  if (!/[A-ZÀ-ÿ\u00f1\u00d1]/g.test(entrada.value)) {
+    op = 0;
+    check();
+    muñeco.style.display = "none";
+    fondo.style.display = "none";
+    diamante.style.display = "none";
+    msj.style.display = "none";
+    alerta.style.display = "none";
 
-  if (entrada.value == "") {
+    if (entrada.value == "") {
+      muñeco.style.display = "block";
+      fondo.style.display = "block";
+      diamante.style.display = "block";
+      msj.style.display = "block";
+    }
+  } else {
+    alerta.style.display = "flex";
+    salida.value = "";
     muñeco.style.display = "block";
     fondo.style.display = "block";
     diamante.style.display = "block";
@@ -85,14 +98,24 @@ function cifrar() {
 }
 
 function decifrar() {
-  op = 1;
-  check();
-  muñeco.style.display = "none";
-  fondo.style.display = "none";
-  diamante.style.display = "none";
-  msj.style.display = "none";
+  if (!/[A-ZÀ-ÿ\u00f1\u00d1]/g.test(entrada.value)) {
+    op = 1;
+    check();
+    muñeco.style.display = "none";
+    fondo.style.display = "none";
+    diamante.style.display = "none";
+    msj.style.display = "none";
+    alerta.style.display = "none";
 
-  if (entrada.value == "") {
+    if (entrada.value == "") {
+      muñeco.style.display = "block";
+      fondo.style.display = "block";
+      diamante.style.display = "block";
+      msj.style.display = "block";
+    }
+  } else {
+    alerta.style.display = "flex";
+    salida.value = "";
     muñeco.style.display = "block";
     fondo.style.display = "block";
     diamante.style.display = "block";
@@ -107,17 +130,14 @@ function borrar() {
   fondo.style.display = "block";
   diamante.style.display = "block";
   msj.style.display = "block";
+  alerta.style.display = "none";
 }
 
 function copiarTexto() {
   if (entrada.value != "") {
     navigator.clipboard.writeText(salida.value);
-    alert("Texto copiado")
+    alert("Texto copiado");
   }
-}
-
-function pegarTexto(){
-  
 }
 
 encriptador.onclick = cifrar;

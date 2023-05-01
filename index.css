@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@100;200;300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@100;200;300;400;500&display=swap");
 
 * {
   margin: 0;
@@ -8,14 +8,27 @@
   vertical-align: center;
 }
 
-:root{
-  --background: #E6F4F1;
+:root {
+  --background: #e6f4f1;
   --area: #dceae7;
   --shadow: #b4c1be;
   --button: #2f7745;
   --buttonH: #72ba84;
   --buttonH2: #5c5c5c;
   --font: #333333;
+
+  /*
+    --primary-100:#8FD8A0;
+    --primary-200:#72ba84;
+    --primary-300:#2f7745;
+    --accent-100:#F2C57C;
+    --accent-200:#8a6722;
+    --text-100:#333333;
+    --text-200:#5c5c5c;
+    --bg-100:#E6F4F1;
+    --bg-200:#dceae7;
+    --bg-300:#b4c1be;
+*/
 }
 
 body {
@@ -24,37 +37,25 @@ body {
 
 .logoAlura {
   position: absolute;
-  left: 2%;
-  top: 1em;
+  top: 20px;
+  left: -10px;
 }
 
 main {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .interactuar {
-  width: 65%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position: relative;
-  top: 70px;
+  left: 100px;
+  top: 80px;
 }
 
 #entrada {
   width: 800px;
-  height: 500px;
-}
-
-#salida {
-  width: 350px;
-  height: 620px;
-  display: flex;
-  position: relative;
-  top: 30px;
+  height: 470px;
 }
 
 .areas {
@@ -63,20 +64,44 @@ main {
   border-radius: 1em;
   font-size: large;
   background-color: var(--area);
-  box-shadow: -7px 7px 10px var(--shadow) ;
-  
+  box-shadow: -7px 7px 10px var(--shadow);
+}
+
+.validacion {
+  margin: 10px 0;
+  gap: 10px;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  color: red;
+}
+
+.validacion > img {
+  animation: pop 3s infinite;
+}
+
+@keyframes pop {
+  0%{
+    transform: scale(0.8);
+  }
+  50%{
+    transform: scale(1.3);
+  }
+  100%{
+    transform: scale(0.8);
+  }
 }
 
 .botones {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin: 10px 0;
+  position: relative;
+  margin: 15px 0;
 }
 
 .boton {
   margin: 5px;
-  width: 10em;
+  width: 9.5em;
   height: 2.5em;
   display: flex;
   align-content: center;
@@ -87,6 +112,7 @@ main {
   border-radius: 29px;
   color: #f7f0ff;
   background-color: var(--button);
+  cursor: pointer;
 }
 
 .boton:hover {
@@ -94,130 +120,162 @@ main {
 }
 
 .resultados {
-  width: 35%;
+  position: relative;
+  left: 160px;
+}
+
+#salida {
+  width: 350px;
+  height: 620px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  top: 30px;
 }
 
 #copiar {
   width: 350px;
+  background-color: var(--font);
+  cursor: pointer;
   position: relative;
-  top: -70px;
-  background-color: black;
-  border: 2px solid #000000;
+  left: 15px;
+  bottom: 55px;
 }
 
 #copiar:hover {
-  border: 2px solid white;
+  background-color: var(--buttonH2);
 }
 
+/*
+.notificacion {
+  position: absolute;
+  transform: translateY(30px);
+  opacity: 0;
+  visibility: hidden;
+  animation: fade-in 4s linear infinite;
+}
+
+@keyframes fade-in {
+  5%{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  90%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.progreso {
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background-image: linear-gradient(to right, #539bdb, #3250bf);
+  border-radius: inherit;
+  animation: load 3s 0.25s linear forwards;
+}
+
+
+@keyframes load {
+  to {
+    transform: scaleX(1);
+  }
+}*/
+
+aside {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  left: 180px;
+  top: 70px;
+}
 
 .muñeco {
-  width: 336px;
-  height: 304px;
-  position: absolute;
-  top: 70px;
-  right: 100px;
+  width: 350px;
   animation: spin 2s infinite;
-}
-
-.fondo{
-  width: 336px;
-  height: 304px;
   position: absolute;
-  top: 70px;
-  right: 100px;
-  animation: spin 2s infinite;
 }
 
 @keyframes spin {
-  0%{
+  0% {
     transform: translateY(0px);
   }
-  40%{
+  40% {
     transform: translateY(7px);
   }
-  100%{
+  100% {
     transform: translateY(0px);
   }
 }
 
-
-
-.diamante{
+.diamante {
   position: absolute;
-  height: 80px;
-  top: 110px;
-  right: 300px;
+  width: 75px;
+  left: 70px;
+  top: 33px;
   animation: diamond 2s infinite;
 }
 
 @keyframes diamond {
-  0%{
+  0% {
     transform: translateY(0px);
   }
-  40%{
+  40% {
     transform: rotate(7deg);
   }
-  100%{
+  100% {
     transform: translateY(0px);
   }
 }
 
 .mensaje {
   position: absolute;
-  position: absolute;
-  top: 430px;
-  right: 100px;
+  top: 370px;
+  left: 10px;
   animation: up 2s 100ms infinite;
 }
 
-
 @keyframes up {
-  0%{
+  0% {
     transform: translateY(0px);
   }
-  40%{
+  40% {
     transform: translateY(7px);
   }
-  100%{
+  100% {
     transform: translateY(0px);
   }
 }
 
-.footer {
+footer {
   color: var(--font);
   display: flex;
+  gap: 15px;
   position: absolute;
-  align-items: center;
-  bottom: 0%;
-  left: 40%;
-  gap: 1rem;
+  top: 725px;
+  left: 600px;
 }
 
-a{
+a {
   color: var(--font);
 }
 
-.github:hover{
+.github:hover {
   color: var(--buttonH);
 }
 
-.linkedin:hover{
+.linkedin:hover {
   color: var(--buttonH);
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (min-width: 641px) and (max-width: 1007px) {
   body {
+    background-color: red;
   }
 }
-@media screen and (max-width: 800px) {
-  main {
-    flex-direction: column;
-  }
-}
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 640px) {
   body {
+    background-color: #2f7745;
   }
 }
