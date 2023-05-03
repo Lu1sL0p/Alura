@@ -35,15 +35,15 @@ body {
   background-color: var(--background);
 }
 
+main {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 .logoAlura {
   position: absolute;
   top: 20px;
   left: -10px;
-}
-
-main {
-  display: flex;
-  flex-wrap: nowrap;
 }
 
 .interactuar {
@@ -81,13 +81,13 @@ main {
 }
 
 @keyframes pop {
-  0%{
+  0% {
     transform: scale(0.8);
   }
-  50%{
+  50% {
     transform: scale(1.3);
   }
-  100%{
+  100% {
     transform: scale(0.8);
   }
 }
@@ -104,14 +104,14 @@ main {
   width: 9.5em;
   height: 2.5em;
   display: flex;
-  align-content: center;
   justify-content: center;
+  align-items: center;
   font-size: 21px;
   font-weight: bold;
-  border: 2px solid white;
   border-radius: 29px;
   color: #f7f0ff;
   background-color: var(--button);
+  border: 2px solid var(--button);
   cursor: pointer;
 }
 
@@ -119,9 +119,25 @@ main {
   background-color: var(--buttonH);
 }
 
+#encriptar::after {
+  content: "Encriptar";
+}
+
+#pegar::after {
+  content: "Pegar";
+}
+
+#limpiar::after {
+  content: "Limpiar";
+}
+
+#desencriptar::after {
+  content: "Desencriptar";
+}
+
 .resultados {
   position: relative;
-  left: 160px;
+  left: 200px;
 }
 
 #salida {
@@ -135,6 +151,7 @@ main {
 #copiar {
   width: 350px;
   background-color: var(--font);
+  border: 2px solid black;
   cursor: pointer;
   position: relative;
   left: 15px;
@@ -187,7 +204,7 @@ aside {
   height: 100%;
   position: relative;
   z-index: 1;
-  left: 180px;
+  left: 220px;
   top: 70px;
 }
 
@@ -269,13 +286,166 @@ a {
   color: var(--buttonH);
 }
 
+
 @media screen and (min-width: 641px) and (max-width: 1007px) {
-  body {
-    background-color: red;
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .interactuar {
+    left: 90px;
+    top: 110px;
+  }
+
+  #entrada {
+    width: 100%;
+    height: 300px;
+  }
+
+  .validacion {
+    margin-top: 18px;
+    height: 0px;
+  }
+
+  .botones {
+    width: 100%;
+    position: relative;
+    top: 5px;
+    gap: 25px;
+    left: 20px;
+    justify-content: space-evenly;
+  }
+  .resultados {
+    width: 100%;
+    position: absolute;
+    top: 540px;
+    left: 90px;
+  }
+
+  #salida {
+    width: 100%;
+    height: 300px;
+  }
+
+  #copiar {
+    width: 100%;
+    left: 0;
+  }
+
+  .muñeco,
+  .diamante {
+    display: none;
+  }
+
+  .mensaje{
+    display: flex;
+    top: 140px;
+    left: 13%;
+  }
+
+
+  footer {
+    position: absolute;
+    top: 1000px;
+    left: 50%;
+    transform: scale(1.2);
   }
 }
 @media screen and (max-width: 640px) {
   body {
-    background-color: #2f7745;
+    width: 50%;
+    margin: 0;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .logoAlura {
+    position: relative;
+    left: 75%;
+  }
+  .interactuar {
+    width: 155%;
+    left: 16px;
+    top: 30px;
+  }
+
+  #entrada {
+    width: 118%;
+    height: 300px;
+  }
+
+  .validacion {
+    font-size: small;
+    width: 500px;
+    margin-top: 18px;
+  }
+
+  .botones {
+    position: relative;
+    left: 15%;
+    top: 5px;
+    gap: 50px;
+  }
+
+  .boton {
+    transform: scale(1.3);
+  }
+
+  #encriptar::after {
+    content: url(./Images/encriptado.svg);
+  }
+
+  #pegar{
+    display: none;
+  }
+
+  #limpiar {
+    display: none;
+  }
+
+  #desencriptar::after {
+    content: url(./Images/desencriptado.svg);
+  }
+
+  .resultados {
+    width: 155%;
+    position: relative;
+    left: 16px;
+    top: 5px;
+  }
+
+  #salida {
+    width: 118%;
+    height: 300px;
+  }
+
+  #copiar {
+    position: relative;
+    height: 30px;
+    width: 93%;
+    left: 3%;
+    top: -50px;
+  }
+
+  .muñeco,
+  .diamante {
+    display: none;
+  }
+
+  .mensaje {
+    width: 150%;
+    left: -85%;
+    top: 60px;
+  }
+
+  footer {
+    position: absolute;
+    top: 900px;
+    left: 20%;
+    transform: scale(0.8);
   }
 }

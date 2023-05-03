@@ -17,30 +17,22 @@
           placeholder="Ingrese algo..."
         ></textarea>
         <div class="validacion" id="validacion">
-          <img src="./Images/alerta.svg" alt="Ícono de alerta"/>
+          <img src="./Images/alerta.svg" alt="Ícono de alerta" />
           <p>Solo letras minúsculas y sin acentos</p>
         </div>
         <div class="botones">
-          <input type="submit" value="Encriptar" id="encriptar" class="boton" />
-          <input type="submit" value="Pegar" id="pegar" class="boton" />
-          <input type="submit" value="Limpiar" id="limpiar" class="boton" />
-          <input
-            type="submit"
-            value="Desencriptar"
-            id="desencriptar"
-            class="boton"
-          />
+          <button id="encriptar" class="boton"></button>
+          <button id="pegar" class="boton"></button>
+          <button id="limpiar" class="boton"></button>
+          <button id="desencriptar" class="boton"></button>
         </div>
       </section>
-      <aside id="muñeco">
-        <img src="./Images/muñeco.svg" alt="" class="muñeco" id="cuerpo" />
-        <img src="./Images/fondo.svg" alt="" class="muñeco" id="fondo" />
-        <img
-          src="./Images/diamante.svg"
-          alt=""
-          class="diamante"
-          id="diamante"
-        />
+      <aside>
+        <div id="muñeco">
+          <img src="./Images/muñeco.svg" alt="" class="muñeco" />
+          <img src="./Images/fondo.svg" alt="" class="muñeco" />
+          <img src="./Images/diamante.svg" alt="" class="diamante" />
+        </div>
         <img src="./Images/mensaje.svg" alt="" class="mensaje" id="mensaje" />
       </aside>
       <section class="resultados">
@@ -85,5 +77,5 @@
       </a>
     </footer>
   </body>
-  <script src="./prueba.js"></script>
+  <script src="./index.js"></script>
 </html>

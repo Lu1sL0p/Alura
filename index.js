@@ -5,9 +5,7 @@ let desencriptador = document.querySelector("#desencriptar");
 let limpiar = document.querySelector("#limpiar");
 let copiar = document.querySelector("#copiar");
 let pegar = document.querySelector("#pegar");
-let muñeco = document.getElementById("cuerpo");
-let fondo = document.getElementById("fondo");
-let diamante = document.getElementById("diamante");
+let muñeco = document.getElementById("muñeco");
 let msj = document.getElementById("mensaje");
 let alerta = document.getElementById("validacion");
 let op;
@@ -70,30 +68,40 @@ function check() {
   }
 }
 
+let ancho = document.documentElement.clientWidth + 17;
+console.log(ancho);
+
+function mostrar() {
+  if (ancho > 1007) {
+    muñeco.style.display = "block";
+    msj.style.display = "block";
+  } else {
+    msj.style.display = "block";
+  }
+}
+
+function ocultar() {
+  muñeco.style.display = "none";
+  msj.style.display = "none";
+  salida.style.position = "relative"
+  salida.style.top = 1000;
+}
+
 function cifrar() {
   //Válida mayúsculas y  con acentos
   if (!/[A-ZÀ-ÿ\u00f1\u00d1]/g.test(entrada.value)) {
     op = 0;
     check();
-    muñeco.style.display = "none";
-    fondo.style.display = "none";
-    diamante.style.display = "none";
-    msj.style.display = "none";
+    ocultar();
     alerta.style.display = "none";
 
     if (entrada.value == "") {
-      muñeco.style.display = "block";
-      fondo.style.display = "block";
-      diamante.style.display = "block";
-      msj.style.display = "block";
+      mostrar();
     }
   } else {
-    alerta.style.display = "flex";
+    mostrar();
     salida.value = "";
-    muñeco.style.display = "block";
-    fondo.style.display = "block";
-    diamante.style.display = "block";
-    msj.style.display = "block";
+    alerta.style.display = "flex";
   }
 }
 
@@ -101,40 +109,28 @@ function decifrar() {
   if (!/[A-ZÀ-ÿ\u00f1\u00d1]/g.test(entrada.value)) {
     op = 1;
     check();
-    muñeco.style.display = "none";
-    fondo.style.display = "none";
-    diamante.style.display = "none";
-    msj.style.display = "none";
+    ocultar();
     alerta.style.display = "none";
 
     if (entrada.value == "") {
-      muñeco.style.display = "block";
-      fondo.style.display = "block";
-      diamante.style.display = "block";
-      msj.style.display = "block";
+      mostrar();
     }
   } else {
-    alerta.style.display = "flex";
+    mostrar();
     salida.value = "";
-    muñeco.style.display = "block";
-    fondo.style.display = "block";
-    diamante.style.display = "block";
-    msj.style.display = "block";
+    alerta.style.display = "flex";
   }
 }
 
 function borrar() {
+  mostrar();
   salida.value = "";
   entrada.value = "";
-  muñeco.style.display = "block";
-  fondo.style.display = "block";
-  diamante.style.display = "block";
-  msj.style.display = "block";
   alerta.style.display = "none";
 }
 
 function copiarTexto() {
-  if (entrada.value != "") {
+  if (salida.value != "") {
     navigator.clipboard.writeText(salida.value);
     alert("Texto copiado");
   }
