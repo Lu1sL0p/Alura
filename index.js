@@ -8,6 +8,7 @@ let pegar = document.querySelector("#pegar");
 let muñeco = document.getElementById("muñeco");
 let msj = document.getElementById("mensaje");
 let alerta = document.getElementById("validacion");
+let notificacion = document.getElementsByClassName("notificacion")[0];
 let op;
 
 function check() {
@@ -83,7 +84,7 @@ function mostrar() {
 function ocultar() {
   muñeco.style.display = "none";
   msj.style.display = "none";
-  salida.style.position = "relative"
+  salida.style.position = "relative";
   salida.style.top = 1000;
 }
 
@@ -132,7 +133,10 @@ function borrar() {
 function copiarTexto() {
   if (salida.value != "") {
     navigator.clipboard.writeText(salida.value);
-    alert("Texto copiado");
+    notificacion.style.display = "flex";
+    setTimeout(() => {
+    notificacion.style.display = "none";
+    }, 3000);
   }
 }
 

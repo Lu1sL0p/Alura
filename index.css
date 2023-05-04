@@ -16,19 +16,7 @@
   --buttonH: #72ba84;
   --buttonH2: #5c5c5c;
   --font: #333333;
-
-  /*
-    --primary-100:#8FD8A0;
-    --primary-200:#72ba84;
-    --primary-300:#2f7745;
-    --accent-100:#F2C57C;
-    --accent-200:#8a6722;
-    --text-100:#333333;
-    --text-200:#5c5c5c;
-    --bg-100:#E6F4F1;
-    --bg-200:#dceae7;
-    --bg-300:#b4c1be;
-*/
+  --letter: #f7f0ff;
 }
 
 body {
@@ -67,6 +55,11 @@ main {
   box-shadow: -7px 7px 10px var(--shadow);
 }
 
+/*
+.areas:focus {
+  outline: none;
+}
+*/
 .validacion {
   margin: 10px 0;
   gap: 10px;
@@ -109,7 +102,7 @@ main {
   font-size: 21px;
   font-weight: bold;
   border-radius: 29px;
-  color: #f7f0ff;
+  color: var(--letter);
   background-color: var(--button);
   border: 2px solid var(--button);
   cursor: pointer;
@@ -162,43 +155,36 @@ main {
   background-color: var(--buttonH2);
 }
 
-/*
 .notificacion {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  background-color: #333333e1;
+  color: var(--letter);
+  border-radius: 15px;
+  height: 60px;
+  width: 33%;
+  z-index: 1;
   position: absolute;
+  top: 40px;
+  left: 33%;
   transform: translateY(30px);
   opacity: 0;
-  visibility: hidden;
-  animation: fade-in 4s linear infinite;
+  animation: desplazar 3s linear infinite;
 }
 
-@keyframes fade-in {
-  5%{
+@keyframes desplazar {
+  5% {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
   }
-  90%{
+  90% {
     opacity: 1;
     transform: translateY(0);
   }
 }
-.progreso {
-  position: absolute;
-  left: 5px;
-  bottom: 5px;
-  transform: scaleX(0);
-  transform-origin: left;
-  background-image: linear-gradient(to right, #539bdb, #3250bf);
-  border-radius: inherit;
-  animation: load 3s 0.25s linear forwards;
-}
-
-
-@keyframes load {
-  to {
-    transform: scaleX(1);
-  }
-}*/
 
 aside {
   height: 100%;
@@ -286,7 +272,6 @@ a {
   color: var(--buttonH);
 }
 
-
 @media screen and (min-width: 641px) and (max-width: 1007px) {
   main {
     display: flex;
@@ -299,7 +284,7 @@ a {
   }
 
   #entrada {
-    width: 100%;
+    width: 90%;
     height: 300px;
   }
 
@@ -309,7 +294,7 @@ a {
   }
 
   .botones {
-    width: 100%;
+    width: 90%;
     position: relative;
     top: 5px;
     gap: 25px;
@@ -324,13 +309,13 @@ a {
   }
 
   #salida {
-    width: 100%;
+    width: 90%;
     height: 300px;
   }
 
   #copiar {
     width: 100%;
-    left: 0;
+    left: -5px;
   }
 
   .muñeco,
@@ -338,17 +323,21 @@ a {
     display: none;
   }
 
-  .mensaje{
+  .mensaje {
     display: flex;
     top: 140px;
     left: 13%;
   }
 
+  .notificacion {
+    font-size: large;
+    width: 50%;
+  }
 
   footer {
     position: absolute;
     top: 1000px;
-    left: 50%;
+    left: 42.5%;
     transform: scale(1.2);
   }
 }
@@ -399,7 +388,7 @@ a {
     content: url(./Images/encriptado.svg);
   }
 
-  #pegar{
+  #pegar {
     display: none;
   }
 
@@ -440,6 +429,12 @@ a {
     width: 150%;
     left: -85%;
     top: 60px;
+  }
+
+  .notificacion {
+    font-size: small;
+    width: 70%;
+    left: 22%;
   }
 
   footer {
