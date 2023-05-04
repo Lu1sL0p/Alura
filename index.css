@@ -55,11 +55,10 @@ main {
   box-shadow: -7px 7px 10px var(--shadow);
 }
 
-/*
 .areas:focus {
   outline: none;
 }
-*/
+
 .validacion {
   margin: 10px 0;
   gap: 10px;
@@ -90,11 +89,12 @@ main {
   flex-direction: row;
   position: relative;
   margin: 15px 0;
+  justify-content: space-between;
 }
 
 .boton {
   margin: 5px;
-  width: 9.5em;
+  width: 30%;
   height: 2.5em;
   display: flex;
   justify-content: center;
@@ -114,10 +114,6 @@ main {
 
 #encriptar::after {
   content: "Encriptar";
-}
-
-#pegar::after {
-  content: "Pegar";
 }
 
 #limpiar::after {
@@ -386,10 +382,6 @@ a {
 
   #encriptar::after {
     content: url(./Images/encriptado.svg);
-  }
-
-  #pegar {
-    display: none;
   }
 
   #limpiar {

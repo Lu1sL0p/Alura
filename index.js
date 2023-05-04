@@ -4,7 +4,6 @@ let encriptador = document.querySelector("#encriptar");
 let desencriptador = document.querySelector("#desencriptar");
 let limpiar = document.querySelector("#limpiar");
 let copiar = document.querySelector("#copiar");
-let pegar = document.querySelector("#pegar");
 let muñeco = document.getElementById("muñeco");
 let msj = document.getElementById("mensaje");
 let alerta = document.getElementById("validacion");
@@ -143,4 +142,4 @@ function copiarTexto() {
 encriptador.onclick = cifrar;
 desencriptador.onclick = decifrar;
 limpiar.onclick = borrar;
-copiar.onclick = copiarTexto; //Agregar función que copie el contenido al portapapeles
+copiar.onclick = copiarTexto;
