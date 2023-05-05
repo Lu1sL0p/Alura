@@ -66,6 +66,7 @@ main {
   display: none;
   flex-direction: row;
   align-items: center;
+  color: red;
 }
 
 .validacion > img {
@@ -436,7 +437,7 @@ a {
   }
 
   .validacion{
-    transform: scale(0.8);
+    transform: scale();
     gap: 13PX;
   }
 
