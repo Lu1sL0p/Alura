@@ -6,6 +6,7 @@
   border: 0;
   font-size: 100%;
   vertical-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
@@ -41,7 +42,7 @@ main {
   top: 80px;
 }
 
-#entrada {
+.interactuar > textarea {
   width: 800px;
   height: 470px;
 }
@@ -112,15 +113,15 @@ main {
   background-color: var(--buttonH);
 }
 
-#encriptar::after {
+button:first-child::after {
   content: "Encriptar";
 }
 
-#limpiar::after {
+button:nth-child(2)::after{
   content: "Limpiar";
 }
 
-#desencriptar::after {
+button:nth-child(3)::after{
   content: "Desencriptar";
 }
 
@@ -129,7 +130,7 @@ main {
   left: 200px;
 }
 
-#salida {
+.resultados > textarea{
   width: 350px;
   height: 620px;
   display: flex;
@@ -137,7 +138,7 @@ main {
   top: 30px;
 }
 
-#copiar {
+.botones > input {
   width: 350px;
   background-color: var(--font);
   border: 2px solid black;
@@ -147,7 +148,7 @@ main {
   bottom: 55px;
 }
 
-#copiar:hover {
+.botones > input:hover {
   background-color: var(--buttonH2);
 }
 
@@ -279,7 +280,7 @@ a {
     top: 110px;
   }
 
-  #entrada {
+  .interactuar > textarea {
     width: 90%;
     height: 300px;
   }
@@ -304,12 +305,12 @@ a {
     left: 90px;
   }
 
-  #salida {
+  .resultados > textarea {
     width: 90%;
     height: 300px;
   }
 
-  #copiar {
+  .botones > input {
     width: 100%;
     left: -5px;
   }
@@ -322,13 +323,13 @@ a {
   .mensaje {
     display: flex;
     top: 140px;
-    left: 13%;
+    left: 10%;
   }
 
   .notificacion {
     font-size: large;
     width: 50%;
-    top: 680px;;
+    top: 680px;
   }
 
   footer {
@@ -359,7 +360,7 @@ a {
     top: 30px;
   }
 
-  #entrada {
+  .interactuar > textarea {
     width: 118%;
     height: 300px;
   }
@@ -384,15 +385,15 @@ a {
     align-items: center;
   }
 
-  #encriptar::after {
+  .botones > button:nth-child(1)::after {
     content: url(./Images/encriptado.svg);
   }
 
-  #limpiar {
+  .botones > button:nth-child(2){
     display: none;
   }
 
-  #desencriptar::after {
+  .botones > button:nth-child(3)::after {
     content: url(./Images/desencriptado.svg);
   }
 
@@ -403,17 +404,18 @@ a {
     top: 5px;
   }
 
-  #salida {
+  .resultados > textarea {
     width: 118%;
     height: 300px;
   }
 
-  #copiar {
+  .botones > input {
     position: relative;
     height: 30px;
     width: 93%;
     left: 3%;
     top: -50px;
+    font-size: small;
   }
 
   .muñeco,
@@ -423,7 +425,7 @@ a {
 
   .mensaje {
     width: 150%;
-    left: -85%;
+    left: -80%;
     top: 60px;
   }
 
@@ -434,9 +436,14 @@ a {
     top: 650px;
   }
 
+  .validacion{
+    transform: scale(0.8);
+    gap: 13PX;
+  }
+
   footer {
     position: absolute;
-    top: 900px;
+    top: 950px;
     left: 20%;
     transform: scale(0.8);
     align-items: center;
