@@ -8,6 +8,7 @@ let muñeco = document.getElementById("muñeco");
 let msj = document.getElementById("mensaje");
 let alerta = document.getElementById("validacion");
 let notificacion = document.getElementsByClassName("notificacion")[0];
+let ancho = document.documentElement.clientWidth + 17;
 let op;
 
 function check() {
@@ -67,9 +68,6 @@ function check() {
       break;
   }
 }
-
-let ancho = document.documentElement.clientWidth + 17;
-console.log(ancho);
 
 function mostrar() {
   if (ancho > 1007) {
