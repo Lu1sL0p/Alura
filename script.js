@@ -12,61 +12,36 @@ let ancho = document.documentElement.clientWidth + 17;
 let op;
 
 function check() {
-  let frase = entrada.value;
-  let arreglo = frase.split("");
-  let i = 0;
+  let vocal = entrada.value;
+  let arreglo = [
+    ["e", "enter"],
+    ["i", "imes"],
+    ["a", "ai"],
+    ["o", "ober"],
+    ["u", "ufat"],
+  ];
 
   switch (op) {
     case 0:
-      while (i < arreglo.length) {
-        if (arreglo[i] == "a") {
-          arreglo[i] = "ai";
+      for (let i = 0; i < arreglo.length; i++) {
+        if (vocal.includes(arreglo[i][0])) {
+          vocal = vocal.replaceAll(arreglo[i][0], arreglo[i][1]);
         }
-        if (arreglo[i] == "e") {
-          arreglo[i] = "enter";
-        }
-        if (arreglo[i] == "i") {
-          arreglo[i] = "imes";
-        }
-        if (arreglo[i] == "o") {
-          arreglo[i] = "ober";
-        }
-        if (arreglo[i] == "u") {
-          arreglo[i] = "ufat";
-        }
-        frase = arreglo.join("");
-        i++;
       }
-      salida.value = frase;
       break;
     case 1:
-      i = 0;
-      while (i < arreglo.length) {
-        if (arreglo[i] == "a") {
-          arreglo.splice(i + 1, 1);
+      for (let i = 0; i < arreglo.length; i++) {
+        if (vocal.includes(arreglo[i][1])) {
+          vocal = vocal.replaceAll(arreglo[i][1], arreglo[i][0]);
         }
-        if (arreglo[i] == "e") {
-          arreglo.splice(i + 1, 4);
-        }
-        if (arreglo[i] == "i") {
-          arreglo.splice(i + 1, 3);
-        }
-        if (arreglo[i] == "o") {
-          arreglo.splice(i + 1, 3);
-        }
-        if (arreglo[i] == "u") {
-          arreglo.splice(i + 1, 3);
-        }
-        frase = arreglo.join("");
-        i++;
       }
-      salida.value = frase;
       break;
     default:
       muñeco.style.display = "block";
       msj.style.display = "block";
       break;
   }
+  salida.value = vocal;
 }
 
 function mostrar() {
@@ -109,7 +84,6 @@ function decifrar() {
     check();
     ocultar();
     alerta.style.display = "none";
-
     if (entrada.value == "") {
       mostrar();
     }
@@ -132,7 +106,7 @@ function copiarTexto() {
     navigator.clipboard.writeText(salida.value);
     notificacion.style.display = "flex";
     setTimeout(() => {
-    notificacion.style.display = "none";
+      notificacion.style.display = "none";
     }, 3000);
   }
 }
