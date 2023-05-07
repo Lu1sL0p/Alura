@@ -495,12 +495,12 @@ a {
   }
 
   .switch {
-    left: 10%;
+    left: 13%;
     top: -100px;
   }
 
   .interactuar {
-    width: 150%;
+    width: 145%;
     left: 16px;
     top: 30px;
   }
@@ -544,7 +544,7 @@ a {
   }
 
   .resultados {
-    width: 150%;
+    width: 145%;
     position: relative;
     left: 16px;
     top: 5px;
@@ -589,7 +589,7 @@ a {
   .notificacion {
     font-size: small;
     width: 80%;
-    left: 17%;
+    left: 14%;
     top: 670px;
   }
 
