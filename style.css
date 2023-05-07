@@ -491,16 +491,16 @@ a {
 
   .logoAlura {
     position: relative;
-    left: 10%;
+    left: 15%;
   }
 
   .switch {
-    left: 7%;
+    left: 10%;
     top: -100px;
   }
 
   .interactuar {
-    width: 130%;
+    width: 150%;
     left: 16px;
     top: 30px;
   }
@@ -544,7 +544,7 @@ a {
   }
 
   .resultados {
-    width: 130%;
+    width: 150%;
     position: relative;
     left: 16px;
     top: 5px;
@@ -571,14 +571,14 @@ a {
 
   .mensaje {
     width: 150%;
-    left: -90%;
+    left: -85%;
     top: 60px;
   }
 
   .notificacion {
     font-size: small;
     width: 80%;
-    left: 15%;
+    left: 17%;
     top: 670px;
   }
 
@@ -590,7 +590,7 @@ a {
   footer {
     position: absolute;
     top: 920px;
-    left: 5%;
+    left: 15%;
     transform: scale(0.8);
     align-items: center;
     gap: 15px;
