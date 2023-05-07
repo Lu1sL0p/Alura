@@ -8,6 +8,7 @@ let muñeco = document.getElementById("muñeco");
 let msj = document.getElementById("mensaje");
 let alerta = document.getElementById("validacion");
 let notificacion = document.getElementsByClassName("notificacion")[0];
+let dark = document.querySelector("#dark");
 let ancho = document.documentElement.clientWidth + 17;
 let op;
 
@@ -111,7 +112,12 @@ function copiarTexto() {
   }
 }
 
+function oscuro(){
+  document.body.classList.toggle('dark')
+}
+
 encriptador.onclick = cifrar;
 desencriptador.onclick = decifrar;
 limpiar.onclick = borrar;
 copiar.onclick = copiarTexto;
+dark.onclick = oscuro;
