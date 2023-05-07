@@ -562,6 +562,17 @@ a {
     left: 3%;
     top: -60px;
     font-size: small;
+    cursor: pointer;
+    background-color: var(--font);
+    color: var(--letter);
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+    font-weight: bold;
+    border-radius: 29px;
+    transition: 0.25s ease-in-out;
   }
 
   .muñeco,
